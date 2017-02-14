@@ -27,3 +27,13 @@ val m = Monoid[Int].combineAll(List.empty)
 
 val n = Monoid[List[Int]].combineAll(List(List(1), List(4), List(7, 8)))
 val o = Monoid[List[Int]].combineAll(List(List.empty))
+
+
+import cats.Foldable
+
+val p = Foldable[List].fold(List(1, 2, 3))
+val q = Foldable[List].foldLeft(List("Hello", "World", "Again"), "")((a, b) => a+a+b)
+
+val r1 = Foldable[Option].toList(Option(5))
+val r2 = Foldable[Option].toList(None)
+
