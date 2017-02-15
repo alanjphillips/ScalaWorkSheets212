@@ -40,4 +40,5 @@ implicit val catsMonad: Monad[Thing] = new Monad[Thing] {
   override def tailRecM[A, B](a: A)(f: (A) => Thing[Either[A, B]]) = ???
 }
 
-val catsMonadCThing = Monad[Thing].flatMap(aThing)(cFunc)
+val dThing = Monad[Thing].pure(7)
+val catsMonadCThing = Monad[Thing].flatMap(dThing)(cFunc)
