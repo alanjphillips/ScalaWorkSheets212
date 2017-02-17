@@ -1,0 +1,1 @@
+// Do an immutable cache using a function or partial function
