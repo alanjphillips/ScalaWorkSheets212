@@ -5,7 +5,6 @@ import akka.actor.{Actor, ActorSystem, Props}
 import akka.pattern.ask
 import akka.util.Timeout
 import scala.concurrent.duration._
-import scala.concurrent.Future
 
 case class AddToCache[V](key: String, value: V)
 case class RemoveFromCache(key: String)
