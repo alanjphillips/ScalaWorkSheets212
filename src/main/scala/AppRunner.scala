@@ -5,4 +5,6 @@ object AppRunner extends App {
 
   SumTriple.calculate
 
+  OptionTConcat.concatPrint
+
 }
