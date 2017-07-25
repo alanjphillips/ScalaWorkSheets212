@@ -4,6 +4,10 @@ case class Thing[A](value: A)  {
     Thing(f(value))
   }
 
+  def ap[B](f: Thing[A => B]): Thing[B] = {
+    Thing(f.value(value))
+  }
+
   def flatMap[B](f: A => Thing[B]): Thing[B] = {
     f(value)
   }
@@ -19,6 +23,8 @@ val cFunc: (Int) => Thing[String] = {
 }
 
 val cThing: Thing[String] = aThing.flatMap(cFunc)
+
+val apRes = aThing.ap(Thing[Int => String](a => s"${a.toString}:String"))
 
 import cats.Functor
 
