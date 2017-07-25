@@ -23,6 +23,7 @@ val i = Monoid[Int].empty
 val j = Monoid[List[Int]].empty
 
 val l = Monoid[Int].combineAll(List(1, 1))
+val l2 = Monoid[Int].combineAll(List(1))  // res = 1, '1' is combined using Int's '+' operation with identity/empty '0'
 val m = Monoid[Int].combineAll(List.empty)
 
 val n = Monoid[List[Int]].combineAll(List(List(1), List(4), List(7, 8)))
