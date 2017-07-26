@@ -15,7 +15,14 @@ def callByName(param: => Int): Unit = {
   println(s"Print param again = $param")
 }
 
+def callWithFunc(param: () => Int): Unit = {
+  println(s"Print param = ${param()}")
+  println(s"Print param again = ${param()}")
+}
+
+
 val callByValueRes = regularCallByValue(random())
 
 val callByNameRes = callByName(random())
 
+val callWithFuncRes = callWithFunc(random _)
