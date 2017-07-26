@@ -26,3 +26,13 @@ val callByValueRes = regularCallByValue(random())
 val callByNameRes = callByName(random())
 
 val callWithFuncRes = callWithFunc(random _)
+
+class XLazy { lazy val x = { Thread.sleep(10000); 15 } }
+val waitXLazy = new XLazy
+println(s"XLazy instance = $waitXLazy")
+println(s"XLazy.x = ${waitXLazy.x}")
+
+class X { val x = { Thread.sleep(10000); 15 } }
+val waitX = new X
+println(s"X instance = $waitX")
+println(s"X.x = ${waitX.x}")
